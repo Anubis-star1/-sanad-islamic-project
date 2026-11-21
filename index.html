@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الموسوعة الدينية الميسّرة | الصفحة الترحيبية</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .welcome-hero {
+      max-width: 820px;
+      width: 100%;
+      padding: 2rem;
+      text-align: center;
+    }
+    .welcome-hero-img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border-strong);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .welcome-desc {
+      max-width: 650px;
+      margin: 0.7rem auto 1.8rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+    .enter-login-btn {
+      padding: 0.95rem 2.4rem;
+      font-size: 1.12rem;
+      min-width: 220px;
+    }
+  </style>
+</head>
+<body>
+  <main class="container" style="min-height: 100vh; display: flex; align-items: center; justify-content: center;">
+
+    <!-- 1. الصفحة الترحيبية الأولى عند فتح لينك الموقع -->
+    <section id="welcome-landing" class="liquid-glass welcome-hero">
+      <img src="images/welcome-mosque.jpg"
+           alt="مصلٍّ كفيف يؤدي الصلاة بخشوع داخل مسجد ذي طراز إسلامي هادئ"
+           class="welcome-hero-img" />
+
+      <h1 style="color: var(--primary-green); font-size: 1.95rem; font-weight: 800;">
+        الموسوعة الدينية الميسّرة
+      </h1>
+
+      <p class="welcome-desc"
+         data-speak="الموسوعة الدينية الميسرة: منصة إسلامية شاملة صُممت خصيصاً لخدمة إخواننا من ذوي الإعاقة البصرية والسمعية، توفر مواقيت الصلاة بدقة، والقرآن الكريم قراءةً واستماعاً، والأذكار اليومية الناطقة، واتجاه القبلة، مع دعم صوتي وكتابي متكامل ييسر العبادة والوصول للمعلومة بكل سهولة.">
+        منصة إسلامية شاملة صُمّمت خصيصاً لخدمة إخواننا من ذوي الإعاقة البصرية والسمعية؛ توفر مواقيت الصلاة بدقة، والقرآن الكريم قراءةً واستماعاً، والأذكار اليومية الناطقة، واتجاه القبلة، مع قارئ صوتي عربي وتجربة بصرية مريحة تيسّر الوصول لكل أقسام الموقع.
+      </p>
+
+      <button id="go-to-login-btn" class="btn-glass enter-login-btn"
+              data-speak="سجل الدخول للانتقال إلى صفحة تسجيل الدخول">
+        <span>&#9770;</span>
+        <span>سجل الدخول</span>
+      </button>
+    </section>
+
+    <!-- 2. بطاقة تسجيل الدخول بـ Google -->
+    <section id="login-card" class="liquid-glass hidden" style="max-width: 500px; width: 100%; padding: 2.3rem 2rem; text-align: center;">
+      <h2 style="color: var(--primary-green); font-size: 1.8rem; font-weight: 800; margin-bottom: 0.6rem;">
+        تسجيل الدخول إلى الموسوعة
+      </h2>
+      <p style="color: var(--text-muted); font-size: 0.98rem; margin-bottom: 1.8rem;">
+        سجّل دخولك بحساب Google للمتابعة وتخصيص تجربتك داخل المنصة
+      </p>
+
+      <button id="google-login-btn" class="btn-glass" style="width: 100%; padding: 0.95rem 1.2rem; font-size: 1.05rem;"
+              data-speak="تسجيل الدخول السريع باستخدام حساب جوجل">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="22" height="22" />
+        <span>تسجيل الدخول بحساب Google</span>
+      </button>
+    </section>
+
+    <!-- 3. بطاقة تحديد حالة المستخدم فور تسجيل الدخول -->
+    <section id="disability-choice-card" class="liquid-glass hidden" style="max-width: 780px; width: 100%; padding: 2.3rem; text-align: center;">
+      <h2 style="color: var(--primary-green); font-size: 1.8rem; font-weight: 800;">مرحباً بك، من فضلك حدد حالتك لنخصص تجربتك</h2>
+      <p style="color: var(--text-muted); margin-top: 0.45rem;">سيتم تفعيل المساعد الصوتي أو البصري تلقائياً بناءً على اختيارك</p>
+
+      <div class="choice-grid">
+        <!-- زر الإعاقة السمعية -->
+        <button id="choose-deaf" class="liquid-glass disability-card"
+                data-speak="الاختيار الأول: ذوي الإعاقة السمعية، واجهة بصرية واضحة ونصوص كاملة">
+          <img src="images/mode-deaf.jpg" alt="مصحف مفتوح داخل مسجد يرمز للواجهة البصرية لذوي الإعاقة السمعية" />
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">ذوي الإعاقة السمعية</h3>
+          <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 0.35rem;">
+            تجربة بصرية متكاملة، قراءة فورية، ودعم كتابي مباشر
+          </p>
+        </button>
+
+        <!-- زر الإعاقة البصرية -->
+        <button id="choose-blind" class="liquid-glass disability-card"
+                data-speak="الاختيار الثاني: ذوي الإعاقة البصرية، تفعيل القارئ الصوتي الذكي لكل أجزاء الموقع">
+          <img src="images/mode-blind.jpg" alt="شخص يستمع بسماعة في ساحة مسجد هادئة يرمز للدعم الصوتي لذوي الإعاقة البصرية" />
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main);">ذوي الإعاقة البصرية</h3>
+          <p style="color: var(--text-muted); font-size: 0.94rem; margin-top: 0.35rem;">
+            قراءة صوتية عربية تلقائية لكل عنصر، وإرسال شكاوى صوتية
+          </p>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/voice-engine.js"></script>
+  <script type="module">
+    import { auth, googleProvider, db } from "./js/firebase-config.js";
+    import { signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const welcomeLanding = document.getElementById('welcome-landing');
+    const loginCard = document.getElementById('login-card');
+    const choiceCard = document.getElementById('disability-choice-card');
+    let currentUser = null;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      window.voiceEngine.bindAutoReadElements();
+      window.voiceEngine.speak('مرحباً بك في الموسوعة الدينية الميسرة. اضغط على زر سجل الدخول في منتصف الصفحة للمتابعة.');
+    });
+
+    document.getElementById('go-to-login-btn').addEventListener('click', () => {
+      welcomeLanding.classList.add('hidden');
+      loginCard.classList.remove('hidden');
+      window.voiceEngine.speak('صفحة تسجيل الدخول. اضغط على زر تسجيل الدخول بحساب جوجل.');
+    });
+
+    document.getElementById('google-login-btn').addEventListener('click', async () => {
+      try {
+        const result = await signInWithPopup(auth, googleProvider);
+        currentUser = result.user;
+        await handlePostLogin(currentUser);
+      } catch (err) {
+        alert('حدث خطأ أثناء تسجيل الدخول: ' + err.message);
+      }
+    });
+
+    async function handlePostLogin(user) {
+      const userRef = doc(db, "users", user.uid);
+      const snap = await getDoc(userRef);
+
+      if (!snap.exists()) {
+        await setDoc(userRef, {
+          name: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+          role: "user",
+          createdAt: new Date().toISOString()
+        });
+      }
+
+      loginCard.classList.add('hidden');
+      choiceCard.classList.remove('hidden');
+      window.voiceEngine.speak('تم تسجيل الدخول بنجاح. من فضلك اختر حالتك: الإعاقة السمعية أم الإعاقة البصرية.');
+    }
+
+    async function saveChoiceAndEnter(type) {
+      if (!currentUser) return;
+      await setDoc(doc(db, "users", currentUser.uid), { disabilityType: type }, { merge: true });
+      localStorage.setItem('user_disability_type', type);
+      window.location.href = 'home.html';
+    }
+
+    document.getElementById('choose-deaf').addEventListener('click', () => saveChoiceAndEnter('deaf'));
+    document.getElementById('choose-blind').addEventListener('click', () => saveChoiceAndEnter('blind'));
+  </script>
+</body>
+</html>

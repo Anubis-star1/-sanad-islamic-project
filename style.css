@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-page: #f5f2eb;
+  --bg-surface: #fbf9f5;
+  --bg-sage: #e6ece6;
+  --bg-sand: #eae4d7;
+  --primary-green: #2f5d46;
+  --primary-green-hover: #244937;
+  --accent-olive: #5b7863;
+  --accent-gold: #a67c37;
+  --accent-gold-soft: rgba(166, 124, 55, 0.12);
+  --text-main: #1f2924;
+  --text-muted: #55625b;
+  --border-soft: rgba(47, 93, 70, 0.16);
+  --border-strong: rgba(47, 93, 70, 0.32);
+  --shadow-soft: 0 6px 20px rgba(31, 41, 36, 0.06);
+  --shadow-drawer: 8px 0 28px rgba(31, 41, 36, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-page);
+  background-image: linear-gradient(180deg, #f7f4ed 0%, #efeae0 100%);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.75;
+}
+
+/* بطاقة سطحية هادئة تحافظ على نفس اسم الكلاس للتوافق مع باقي الملفات */
+.liquid-glass {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  border-radius: 16px;
+}
+
+/* الهيدر العلوي */
+.top-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.6rem;
+  margin: 1rem auto;
+  max-width: 1120px;
+  background: var(--primary-green);
+  color: #f9f7f2;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  z-index: 50;
+}
+
+.brand-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #f6efe0;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  letter-spacing: 0.2px;
+}
+
+/* زر الثلاث شرطات */
+.hamburger-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.hamburger-btn:hover,
+.hamburger-btn:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #e6cf9c;
+  outline: 2px solid #e6cf9c;
+  outline-offset: 2px;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: #f9f7f2;
+  border-radius: 2px;
+  transition: transform 0.25s ease;
+}
+
+/* القائمة الجانبية الهادئة */
+.glass-drawer {
+  position: fixed;
+  top: 0;
+  left: -330px;
+  width: 300px;
+  height: 100vh;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-drawer);
+  padding: 1.8rem 1.25rem;
+  z-index: 999;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  overflow-y: auto;
+}
+
+.glass-drawer.open {
+  left: 0;
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 41, 36, 0.42);
+  z-index: 990;
+  display: none;
+}
+
+.drawer-overlay.show {
+  display: block;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+  background: var(--bg-page);
+  border: 1px solid var(--border-soft);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.drawer-link:hover,
+.drawer-link:focus {
+  background: var(--bg-sage);
+  border-color: var(--primary-green);
+  color: var(--primary-green);
+}
+
+/* الحاوية الرئيسية */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.8rem 1.2rem 3.5rem;
+}
+
+/* بانر الصلاة القادمة + العداد التنازلي */
+.next-prayer-banner {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+  background: linear-gradient(135deg, var(--bg-sage) 0%, var(--bg-sand) 100%);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+}
+
+.next-prayer-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-green);
+  margin: 0.35rem 0;
+}
+
+.countdown-box {
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  direction: ltr;
+  display: inline-block;
+  padding: 0.45rem 1.5rem;
+  margin-top: 0.5rem;
+  border-radius: 12px;
+  background: var(--bg-surface);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* شبكة مواقيت الصلاة */
+.prayers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 1rem;
+}
+
+.prayer-card {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.prayer-card:hover,
+.prayer-card:focus {
+  transform: translateY(-3px);
+  border-color: var(--primary-green);
+  box-shadow: var(--shadow-soft);
+}
+
+.prayer-card.active-next {
+  border: 2px solid var(--primary-green);
+  background: var(--bg-sage);
+}
+
+.prayer-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.prayer-card .time {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-top: 0.35rem;
+  color: var(--text-main);
+}
+
+/* أزرار هادئة وواضحة */
+.btn-glass {
+  padding: 0.78rem 1.45rem;
+  border-radius: 10px;
+  border: 1px solid var(--primary-green);
+  background: var(--primary-green);
+  color: #f9f7f2;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+.btn-glass:hover,
+.btn-glass:focus {
+  background: var(--primary-green-hover);
+  border-color: var(--primary-green-hover);
+  transform: translateY(-1px);
+}
+
+/* بطاقات اختيار الحالة */
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.3rem;
+  margin-top: 1.4rem;
+}
+
+.disability-card {
+  padding: 1.4rem;
+  text-align: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+
+.disability-card img {
+  width: 115px;
+  height: 115px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0.9rem;
+  border: 1px solid var(--border-strong);
+}
+
+.disability-card:hover,
+.disability-card:focus {
+  border-color: var(--primary-green);
+  background: var(--bg-sage);
+  transform: translateY(-3px);
+}
+
+.hidden {
+  display: none !important;
+}
